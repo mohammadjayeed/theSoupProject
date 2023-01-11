@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+import time
 
 urls = ["https://finance.yahoo.com/quote/AMZN?p=AMZN&.tsrc=fin-srch","https://finance.yahoo.com/quote/GOOGL?p=GOOGL&.tsrc=fin-srch"]
 headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:108.0) Gecko/20100101 Firefox/108.0"}
@@ -33,4 +34,5 @@ for url in urls:
         # print(subject + " " + value)
         list_.append(value)
     csv_writer.writerow(list_)
+    time.sleep(4)
 csv_file.close()
